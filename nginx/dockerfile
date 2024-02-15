@@ -1,0 +1,7 @@
+FROM nginx:alpine
+
+RUN mkdir -p /home/app/game
+RUN mkdir -p /home/app/frontend
+RUN mkdir -p /home/app/windows/
+RUN mkdir -p /home/app/android/
+COPY ./conf.d /etc/nginx/conf.d
