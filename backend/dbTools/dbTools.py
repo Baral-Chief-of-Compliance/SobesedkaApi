@@ -27,3 +27,39 @@ def create_db() -> None:
 
     connection.close()
 
+
+def get_statistics() -> dict:
+    connection = sqlite3.connect("scores.db")
+
+    cursor = connection.cursor()
+
+    cursor.execute("select count(*) from Score where score_value = 5")
+
+    count_5 = cursor.fetchone()
+
+    cursor.execute("select count(*) from Score where score_value = 4")
+
+    count_4 = cursor.fetchone()
+
+    cursor.execute("select count(*) from Score where score_value = 3")
+
+    count_3 = cursor.fetchone()
+
+    cursor.execute("select count(*) from Score where score_value = 2")
+
+    count_2 = cursor.fetchone()
+
+    cursor.execute("select count(*) from Score where score_value = 1")
+
+    count_1 = cursor.fetchone()
+
+    connection.close()
+
+    return {
+        "count_5": count_5,
+        "count_4": count_4,
+        "count_3": count_3,
+        "count_2": count_2,
+        "count_1": count_1
+    }
+
