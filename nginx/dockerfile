@@ -1,6 +1,7 @@
 FROM nginx:alpine
 
 RUN mkdir -p /home/app/game
+RUN mkdir -p /home/app/gameForTerminal
 RUN mkdir -p /home/app/frontend
 RUN mkdir -p /home/app/windows/
 RUN mkdir -p /home/app/android/

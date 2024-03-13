@@ -20,6 +20,7 @@ services:
     volumes:
       - ./frontend/:/home/app/frontend
       - ./game/:/home/app/game
+      - ./gameForTerminal/:/home/app/gameForTerminal
       - ./windows:/home/app/windows/
       - ./android:/home/app/android/
 
